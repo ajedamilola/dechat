@@ -11,10 +11,23 @@ import DepositGift from "./pages/account/deposit_gift"
 
 function App() {
   return (
-    <main className="font-poppins">
-    <Navbar/>
-  
-    </main>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route path="/app" element={<Auth />}>
+            <Route path="" element={<Posts />} />
+            <Route path="chats" element={<Messages />} />
+            <Route path="chat/:id" element={<SingleChat />} />
+            <Route path="post" element={<Posts />} />
+            <Route path="post/:id" element={<Post />} />
+            <Route path="account" element={<Account />} />
+            <Route path="send-gift" element={<SendGift />} />
+            <Route path="deposit-gift" element={<DepositGift />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 
