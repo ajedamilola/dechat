@@ -10,8 +10,8 @@ const handlePost=(id)=> {
 
     return (
         <div>
-            {[1, 2, 3].map(item => {
-                return <PostCard key={item} onClick={handlePost(item)} />
+            {[1, 2, 3].map(p => {
+                return <PostCard key={p} />
             })}
         </div>
     )
