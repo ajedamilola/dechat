@@ -64,3 +64,21 @@ input::-webkit-inner-spin-button {
     #1bb2de 99.52%
   );
 }
+
+
+/* Animation */
+
+.showcase-img {
+  animation: myanimation 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes myanimation {
+  0% {
+    transform: translateY(7px);
+  }
+
+  100% {
+    transform: translateY(-7px);
+  }
+}
+
