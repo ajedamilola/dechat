@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom"
 import PostCard from "../components/PostCard"
 import NewPost from "./newPost"
 
-function Posts() {
+const Posts = () => {
+    const navigate = useNavigate()
+
+    const handlePost = (id) => {
+        navigate(`post/${id}`)
+    }
+
     return (
         <div>
             <div className="max-w-2xl mx-auto">
