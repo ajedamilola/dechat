@@ -22,7 +22,7 @@ const Stories = () => {
               <FaPlus color="#fff" size={15} />
             </div>
 
-            <p className="text-[12px] font-medium text-white">Add Stories</p>
+            <p className="text-[12px] font-semibold text-white">Add Stories</p>
           </div>
         </SwiperSlide>
 
