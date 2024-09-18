@@ -58,3 +58,41 @@ export const sidebar = [
     icon: "/src/assets/svg/sidebar-vector/cart.svg",
   },
 ];
+
+export const stories = [
+  {
+    name: "Joseph Water",
+    picture: "/src/assets/story/6.jpg",
+    color: ["0deg", "#e18d1e", "rgba(0, 212, 255, 0)"],
+  },
+  {
+    name: "Princesa Smith",
+    picture: "/src/assets/story/2.jpg",
+    color: ["0deg", "#ed8079", "rgba(0,212,255,0)"],
+  },
+  {
+    name: "Joyce Adams",
+    picture: "/src/assets/story/1.jpg",
+    color: ["0deg", "#a38a7b", "rgba(0,212,255,0)"],
+  },
+  {
+    name: "May Gibson",
+    picture: "/src/assets/story/3.jpg",
+    color: ["0deg", "#fcd101", "rgba(0, 212, 255, 0)"],
+  },
+  {
+    name: "Daniella Jones",
+    picture: "/src/assets/story/5.jpg",
+    color: ["0deg", "#ed8079", "rgba(0, 212, 255, 0)"],
+  },
+  {
+    name: "Stella Miles",
+    picture: "/src/assets/story/7.jpg",
+    color: ["0deg", "#174d76", "rgba(0,212,255,0)"],
+  },
+  {
+    name: "Andrew Sabastine",
+    picture: "/src/assets/story/8.jpg",
+    color: ["0deg", "rgba(0,0,0, 1)", "rgba(0, 212, 255, 0)"],
+  },
+];

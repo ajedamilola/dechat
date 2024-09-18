@@ -6,6 +6,7 @@
 
 body {
   background-color: #edf7fc;
+  /* overflow-x: hidden; */
 }
 
 .searched::-webkit-scrollbar {
@@ -16,6 +17,16 @@ body {
 .searched::-webkit-scrollbar-thumb {
   background-color: #038ac99f;
 }
+
+.story-1 {
+  background: linear-gradient(#4a9cd2c0, #4a9cd2c0, #4a9cd2c0, #4a9cd2c0),
+    url("/src/assets/story/story-bg.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+
 /* 
 .friend-request-container {
   clip-path: polygon(14% 0, 19% 8%, 100% 6%, 100% 100%, 0 100%, 0 9%, 10% 9%);

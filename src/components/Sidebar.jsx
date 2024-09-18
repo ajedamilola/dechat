@@ -3,7 +3,7 @@ import { sidebar } from "../constants";
 
 const Sidebar = () => {
   return (
-    <div className="searched fixed h-[calc(100vh-90px)] w-[220px] overflow-y-scroll rounded-md bg-white p-[20px] font-roboto font-medium text-gray-600">
+    <div className="searched fixed z-50 hidden h-[calc(100vh-90px)] w-[220px] overflow-y-scroll rounded-md bg-white p-[20px] font-roboto font-medium text-gray-600 md:block">
       <div className="flex flex-col gap-7">
         <div className="flex flex-row items-center gap-3">
           <img
