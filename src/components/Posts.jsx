@@ -111,7 +111,10 @@ const Posts = () => {
               placeholder={reactionDetails.placeholder}
             />
 
-            <MdClose />
+            <MdClose
+              onClick={() => setReact(false)}
+              className="cursor-pointer"
+            />
           </div>
         )}
 
