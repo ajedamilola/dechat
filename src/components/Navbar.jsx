@@ -4,9 +4,12 @@ import { FiHome } from "react-icons/fi";
 import { HiOutlineUserAdd, HiOutlineMoon } from "react-icons/hi";
 import { FaRegMessage, FaRegBell } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
+import { motion, AnimatePresence } from "framer-motion"; // Import from framer-motion
+import { recentSearch } from "../constants";
 
 const Navbar = () => {
   const [focused, setFocused] = useState(false);
+  const [showSearchedResult, setShowSearchedResult] = useState(false);
 
   return (
     <header className="bg-primary text-white">
@@ -15,31 +18,79 @@ const Navbar = () => {
           <h1 className="text-xl font-extrabold">Dechat</h1>
 
           {/* search input */}
-          <div className="flex w-[200px] items-center justify-between rounded-md bg-[#3494cd] p-2">
-            <div className="relative flex items-center gap-2">
+          <div className="relative flex w-[200px] items-center justify-between rounded-md bg-[#3494cd] p-2">
+            <div className="flex items-center gap-2">
               <RiSearch2Line size={20} />
               <input
                 type="text"
                 className="w-full bg-transparent text-[12px] outline-none placeholder:text-white/70"
                 placeholder="Find Friends..."
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
+                onFocus={() => {
+                  setFocused(true);
+                  setShowSearchedResult(true);
+                }}
+                onBlur={() => {
+                  setFocused(false);
+                  setShowSearchedResult(false);
+                }}
               />
             </div>
             {focused && (
               <MdClose
                 size={20}
                 className="cursor-pointer"
-                onClick={() => setFocused(false)}
+                onClick={() => {
+                  setFocused(false);
+                  setShowSearchedResult(false);
+                }}
               />
             )}
 
             {/* searched field */}
-            <div></div>
+            <AnimatePresence>
+              {showSearchedResult && (
+                <motion.div
+                  className="searched absolute left-0 top-[2.7rem] h-auto w-[200px] overflow-hidden rounded-md bg-white p-[12px]"
+                  initial={{ height: 0 }} // Initial height
+                  animate={{ height: "auto" }} // Animate to full height
+                  exit={{ height: 0 }} // Animate back to height 0
+                  transition={{ duration: 0.3 }} // Transition duration
+                >
+                  <p className="text-sm text-gray-400">Recent Search</p>
+
+                  <div className="flex flex-col gap-3 pt-3">
+                    {recentSearch.map((item, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <img
+                          src={item.picture}
+                          alt={item.name + "-image"}
+                          className="rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 className="text-sm font-medium text-gray-700">
+                            {item.name}
+                          </h4>
+
+                          <p className="font-roboto text-[12px] font-medium text-gray-500">
+                            {item.friends} Mutual Friend
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <FiHome size={20} className="hidden lg:block" />
-          <HiOutlineUserAdd size={20} className="hidden lg:block" />
+
+          <div className="relative hidden lg:block">
+            <HiOutlineUserAdd size={20} />
+
+            <div className="friend-request-container absolute h-[310px] w-[352px] bg-white"></div>
+          </div>
         </div>
 
         <div className="flex items-center gap-5">
@@ -65,7 +116,7 @@ const Navbar = () => {
           <HiOutlineMoon size={20} />
 
           {/* bell-icon */}
-          <div className="relative hidden md:block">
+          <div className="hidden md:block">
             <FaRegBell size={20} />
 
             <div className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-semibold">
