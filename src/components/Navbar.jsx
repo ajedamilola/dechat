@@ -88,8 +88,6 @@ const Navbar = () => {
 
           <div className="relative hidden lg:block">
             <HiOutlineUserAdd size={20} />
-
-            <div className="friend-request-container absolute h-[310px] w-[352px] bg-white"></div>
           </div>
         </div>
 
@@ -116,7 +114,7 @@ const Navbar = () => {
           <HiOutlineMoon size={20} />
 
           {/* bell-icon */}
-          <div className="hidden md:block">
+          <div className="relative hidden md:block">
             <FaRegBell size={20} />
 
             <div className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-semibold">
