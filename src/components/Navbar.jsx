@@ -50,7 +50,7 @@ const Navbar = () => {
             <AnimatePresence>
               {showSearchedResult && (
                 <motion.div
-                  className="searched absolute left-0 top-[2.7rem] h-auto w-[200px] overflow-hidden rounded-md bg-white p-[12px]"
+                  className="searched absolute left-0 top-[2.7rem] z-[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000] h-auto w-[200px] overflow-hidden rounded-md bg-white p-[12px] shadow-lg"
                   initial={{ height: 0 }} // Initial height
                   animate={{ height: "auto" }} // Animate to full height
                   exit={{ height: 0 }} // Animate back to height 0

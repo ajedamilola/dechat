@@ -15,3 +15,46 @@ export const recentSearch = [
     friends: 1,
   },
 ];
+
+export const sidebar = [
+  {
+    name: "Newsfeed",
+    icon: "/src/assets/svg/sidebar-vector/news.svg",
+  },
+  {
+    name: "Favorite",
+    icon: "/src/assets/svg/sidebar-vector/star.svg",
+  },
+  {
+    name: "Group",
+    icon: "/src/assets/svg/sidebar-vector/friends.svg",
+  },
+  {
+    name: "Music & Video",
+    icon: "/src/assets/svg/sidebar-vector/headphones.svg",
+  },
+  {
+    name: "Weather",
+    icon: "/src/assets/svg/sidebar-vector/sky.svg",
+  },
+  {
+    name: "Calender",
+    icon: "/src/assets/svg/sidebar-vector/calendar.svg",
+  },
+  {
+    name: "Games",
+    icon: "/src/assets/svg/sidebar-vector/games.svg",
+  },
+  {
+    name: "News",
+    icon: "/src/assets/svg/sidebar-vector/comment.svg",
+  },
+  {
+    name: "Live Streams",
+    icon: "/src/assets/svg/sidebar-vector/youtube.svg",
+  },
+  {
+    name: "Shop",
+    icon: "/src/assets/svg/sidebar-vector/cart.svg",
+  },
+];

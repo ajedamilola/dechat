@@ -10,7 +10,7 @@ body {
 
 .searched::-webkit-scrollbar {
   width: 3px;
-  border-radius: 12px;
+  border-radius: 20px;
 }
 
 .searched::-webkit-scrollbar-thumb {
