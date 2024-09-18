@@ -14,7 +14,7 @@ const Stories = () => {
         className="z-10"
         spaceBetween={12}
       >
-        <SwiperSlide className="relative h-[148px] w-[129px] rounded-xl border border-gray-400 p-2 md:h-[234px] md:w-[200px]">
+        <SwiperSlide className="relative h-[148px] w-[129px] rounded-xl border border-gray-400 p-2 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[200px]">
           <div className="story-1 h-full w-full rounded-xl blur-[2px]"></div>
 
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3">
@@ -39,7 +39,7 @@ const Stories = () => {
               backgroundRepeat: "no-repeat",
               display: "block",
             }}
-            className="relative flex h-[148px] w-[129px] items-end justify-end rounded-xl pl-4 md:h-[234px] md:w-[190px]"
+            className="relative flex h-[148px] w-[129px] items-end justify-end rounded-xl pl-4 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[190px]"
           >
             <div className="absolute bottom-3 left-4 flex flex-col">
               <h4 className="text-sm font-semibold text-white">{item.name}</h4>

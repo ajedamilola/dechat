@@ -96,3 +96,62 @@ export const stories = [
     color: ["0deg", "rgba(0,0,0, 1)", "rgba(0, 212, 255, 0)"],
   },
 ];
+
+export const colors = [
+  {
+    first: "#fad0c4",
+    last: "#ffd1ff",
+  },
+  {
+    first: "#cfd9df",
+    last: "#e2ebf0",
+  },
+  {
+    first: "#fdfbfb",
+    last: "#ebedee",
+  },
+  {
+    first: "#a8edea",
+    last: "#fed6e3",
+  },
+  {
+    first: "#fdfcfb",
+    last: "#e2d1c3",
+  },
+  {
+    first: "#fff1eb",
+    last: "#ace0f9",
+  },
+  {
+    first: "#e9defa",
+    last: "#fbfcdb",
+  },
+  {
+    first: "#eec0c6",
+    last: "#7ee8fa",
+  },
+  {
+    first: "#abe9cd",
+    last: "#3eadcf",
+  },
+  {
+    first: "#f6f0c4",
+    last: "#d99ec9",
+  },
+  {
+    first: "#d9e4f5",
+    last: "#f5e3e6",
+  },
+  {
+    first: "#e4eee9",
+    last: "#93a5ce",
+  },
+  {
+    first: "#f3e7e9",
+    last: "#e3eeff",
+  },
+  {
+    first: "#e9defa",
+    last: "#fbfcdb",
+  },
+];

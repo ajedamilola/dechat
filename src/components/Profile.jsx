@@ -30,7 +30,7 @@ const Profile = () => {
             jesenkelin75@gmail.com
           </p>
 
-          <p className="py-3 font-roboto text-sm text-gray-600">
+          <p className="py-3 font-roboto text-[12px] text-gray-600 lg:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
             repellat!
           </p>
@@ -41,7 +41,17 @@ const Profile = () => {
                 893
               </h1>
 
-              <p className="font-roboto text-[13px] font-medium text-gray-600">
+              <p className="font-roboto text-[13px] text-gray-600">Followers</p>
+            </div>
+
+            <div className="h-5 w-[1.3px] bg-gray-500"></div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-lg font-bold leading-[1] text-gray-700">
+                893
+              </h1>
+
+              <p className="font- font-roboto text-[13px] text-gray-600">
                 Following
               </p>
             </div>
@@ -53,25 +63,11 @@ const Profile = () => {
                 30892
               </h1>
 
-              <p className="font-roboto text-[13px] font-medium text-gray-600">
-                Likes
-              </p>
-            </div>
-
-            <div className="h-5 w-[1.3px] bg-gray-500"></div>
-
-            <div className="flex flex-col items-center">
-              <h1 className="text-lg font-bold leading-[1] text-gray-700">
-                893
-              </h1>
-
-              <p className="font-roboto text-[13px] font-medium text-gray-600">
-                Followers
-              </p>
+              <p className="font-roboto text-[13px] text-gray-600">Likes</p>
             </div>
           </div>
 
-          <button className="mt-6 rounded-md bg-primary px-3 py-2 text-sm font-medium text-white">
+          <button className="mt-6 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white">
             View Profile
           </button>
         </div>
