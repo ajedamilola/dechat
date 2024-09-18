@@ -2,8 +2,8 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div className="flex w-full items-center justify-center rounded-md bg-white py-[15px] shadow-xl">
-      <div className="flex flex-col items-center justify-center gap-3">
+    <div className="flex w-full items-center justify-center rounded-lg bg-white py-[15px] shadow-xl">
+      <div className="flex flex-col items-center justify-center gap-3 pt-4">
         <div className="relative rounded-full bg-gradient-to-r from-primary via-white to-white p-1">
           <img
             src="/src/assets/story/8.jpg"

@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Stories from "../components/Stories";
 import Profile from "../components/Profile";
+import Posts from "../components/Posts";
 
 const NewsFeed = () => {
   return (
@@ -21,7 +22,7 @@ const NewsFeed = () => {
             <Stories />
 
             <div className="flex w-full flex-row gap-5 pt-4">
-              <div className="w-[300px]">
+              <div className="w-[280px]">
                 <Profile />
               </div>
 
@@ -29,9 +30,7 @@ const NewsFeed = () => {
                 <Posts />
               </div>
 
-              <div className="w-[300px]">
-                
-              </div>
+              <div className="w-[280px]"></div>
             </div>
           </div>
         </div>
