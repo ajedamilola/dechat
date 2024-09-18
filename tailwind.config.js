@@ -4,8 +4,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   theme: {
     extend: {
+      colors: {
+        primary: "#0389c9",
+        bgColor: "#edf7fc",
+        hoverColor: "#f5f5f5",
+      },
       fontFamily: {
-        ["poppins"]: ["Poppins", "sans-serif"],
+        ["montserrat"]: ["montserrat", "sans-serif"],
+        ["roboto"]: ["roboto", "sans-serif"],
       },
     },
   },

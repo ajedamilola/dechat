@@ -1,15 +1,13 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Feed from "./Pages/Feed";
+import { Route, Routes } from "react-router-dom";
+import NewsFeed from "./Pages/NewsFeed";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Feed />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NewsFeed />} />
+      </Routes>
     </div>
   );
 }
