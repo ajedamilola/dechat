@@ -9,9 +9,9 @@ const Posts = () => {
   };
 
   return (
-    <div>
-      {[1, 2, 3].map((item) => {
-        return <PostCard key={item} onClick={handlePost(item)} />;
+    <div className="grid w-full grid-cols-3">
+      {[1, 2, 3, 4, 5, 6].map((item) => {
+        return <PostCard key={item} />;
       })}
     </div>
   );
