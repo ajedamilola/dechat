@@ -1,3 +1,7 @@
+import { GrLocation } from "react-icons/gr";
+import { HiOutlineTag } from "react-icons/hi";
+import { IoCameraOutline } from "react-icons/io5";
+
 export const recentSearch = [
   {
     name: "Page Turner",
@@ -153,5 +157,27 @@ export const colors = [
   {
     first: "#e9defa",
     last: "#fbfcdb",
+  },
+];
+
+export const reactions = [
+  {
+    name: "Album",
+    icon: IoCameraOutline,
+  },
+  {
+    name: "Feelings & Activity",
+    icon: IoCameraOutline,
+    placeholder: "How are you feeling?",
+  },
+  {
+    name: "Check In",
+    icon: GrLocation,
+    placeholder: "Search For Places...",
+  },
+  {
+    name: "Tag Friends",
+    icon: HiOutlineTag,
+    placeholder: "Search Your Friends...",
   },
 ];

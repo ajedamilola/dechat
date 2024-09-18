@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { BsCameraVideo } from "react-icons/bs";
 import { RxDotsHorizontal } from "react-icons/rx";
-import { colors } from "../constants";
+import { colors, reactions } from "../constants";
 import { MdClose } from "react-icons/md";
 
 const Posts = () => {
   const [hideComponent, setHideComponent] = useState(false);
+  const [reactionDetails, setReactionDetails] = useState({
+    placeholder: "",
+    icon: "",
+  });
+  const [react, setReact] = useState(false);
   const [bgColors, setBgColors] = useState({
     firstColor: "",
     lastColor: "",
@@ -26,7 +31,7 @@ const Posts = () => {
               <div className="">
                 <input
                   type="text"
-                  className="border-none bg-transparent font-roboto text-xl tracking-tight text-gray-800 outline-none placeholder:text-gray-600"
+                  className="border-none bg-transparent text-center font-roboto text-xl tracking-tight text-gray-800 outline-none placeholder:text-gray-600"
                   placeholder="Write Something Here..."
                 />
               </div>
@@ -66,7 +71,7 @@ const Posts = () => {
             <div className="my-2 flex w-full items-center justify-between rounded-md bg-[#EDF7FB] pr-3">
               <input
                 type="text"
-                className="flex-1 border-none bg-transparent px-3 py-3 font-roboto text-[13px] outline-none placeholder:text-gray-500"
+                className="flex-1 border-none bg-transparent px-3 py-3 font-roboto text-[13px] outline-none placeholder:text-black/60"
                 placeholder="Write Something Here."
               />
               <img
@@ -79,7 +84,7 @@ const Posts = () => {
         )}
 
         {/* Color Palette */}
-        <div className="flex items-center gap-2 pt-4">
+        <div className="flex items-center gap-2 py-4">
           {colors.map((item, index) => (
             <div
               key={index}
@@ -93,6 +98,44 @@ const Posts = () => {
               }}
             ></div>
           ))}
+        </div>
+
+        {/* reaction inputs */}
+        {react && (
+          <div className="flex items-center justify-between rounded border px-2 font-roboto text-[12px]">
+            <reactionDetails.icon size={20} />
+
+            <input
+              type="text"
+              className="flex-1 border-none py-2 pl-2 outline-none placeholder:text-gray-600"
+              placeholder={reactionDetails.placeholder}
+            />
+
+            <MdClose />
+          </div>
+        )}
+
+        {/* reactions */}
+        <div className="pt-3 font-roboto">
+          <div className="flex flex-wrap gap-x-2 gap-y-2">
+            {reactions.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setReact(true);
+                  setReactionDetails({
+                    placeholder: item.placeholder,
+                    icon: item.icon,
+                  });
+                }}
+                className="flex cursor-pointer items-center gap-1 rounded border px-2 py-1.5"
+              >
+                <item.icon size={20} />
+
+                <p className="text-[14px] font-medium">{item.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

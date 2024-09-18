@@ -30,7 +30,7 @@ const Profile = () => {
             jesenkelin75@gmail.com
           </p>
 
-          <p className="py-3 font-roboto text-[12px] text-gray-600 lg:text-sm">
+          <p className="py-5 font-roboto text-[13px] text-gray-600">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
             repellat!
           </p>
