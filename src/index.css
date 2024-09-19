@@ -31,6 +31,13 @@ body {
   display: block;
 }
 
+.shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    /* Bottom shadow */ 0 2px 4px -2px rgba(0, 0, 0, 0.1),
+    /* Bottom shadow */ 0 -2px 4px -1px rgba(0, 0, 0, 0.1); /* Top shadow */
+}
+
 /* 
 .friend-request-container {
   clip-path: polygon(14% 0, 19% 8%, 100% 6%, 100% 100%, 0 100%, 0 9%, 10% 9%);

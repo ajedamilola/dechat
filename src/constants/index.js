@@ -188,7 +188,7 @@ export const people = [
   "/src/assets/user-sm/image-2.webp",
 ];
 
-export const emojis = [
+export const emojiType = [
   {
     smile: "/src/assets/svg/emoji/smile.svg",
   },
@@ -207,6 +207,20 @@ export const emojis = [
   {
     haha: "/src/assets/svg/emoji/haha.svg",
   },
+];
+
+export const emojis = [
+  "/src/assets/svg/emoji/smile.svg",
+
+  "/src/assets/svg/emoji/cry.svg",
+
+  "/src/assets/svg/emoji/angry.svg",
+
+  "/src/assets/svg/emoji/wow.svg",
+
+  "/src/assets/svg/emoji/love.svg",
+
+  "/src/assets/svg/emoji/haha.svg",
 ];
 
 export const allPosts = [
