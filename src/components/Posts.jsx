@@ -2,37 +2,80 @@ import { RxDotsHorizontal } from "react-icons/rx";
 import { allPosts, emojiType, emojis, people } from "../constants";
 import moment from "moment";
 import { cn } from "../lib/utils";
-import { MdBookmark, MdOutlineBookmarkBorder } from "react-icons/md";
+import { MdBookmark, MdClose, MdOutlineBookmarkBorder } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
 import { GoComment, GoShare } from "react-icons/go";
 import { BsEmojiSmile } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap.css";
-// import "../../assets/bootstrap_white.less";
+import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
+import { BiChevronDown } from "react-icons/bi";
+import { SlGlobe } from "react-icons/sl";
 
 const Posts = () => {
   const [activePostId, setActivePostId] = useState(null);
 
   return (
-    <div className="mt-2 flex flex-col gap-4">
-      {allPosts.map((post) => (
-        <div key={post.id} className="rounded bg-white">
-          <SinglePost
-            post={post}
-            isActive={activePostId === post.id}
-            setActivePostId={setActivePostId}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="mt-2 flex flex-col gap-4">
+        {allPosts.map((post) => (
+          <div key={post.id} className="rounded bg-white">
+            <SinglePost
+              post={post}
+              isActive={activePostId === post.id}
+              setActivePostId={setActivePostId}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
 const SinglePost = ({ post, isActive, setActivePostId }) => {
   const [toggle, setToggle] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [sharedPost, setSharedPost] = useState({});
+
   const emojiDropdownRef = useRef(null);
 
+  // Animation variants for the emoji dropdown
+  const dropdownVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: [0.2, 1, 0.3, 1],
+      },
+    },
+  };
+
+  // Animation variants for each emoji
+  const emojiVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.1,
+        duration: 0.2,
+      },
+    }),
+    hover: {
+      scale: 1.2, // Scale up
+      y: -5, // Move up slightly
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 10,
+      },
+    },
+  };
+
+  // Closing emoji when losses focus
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -55,38 +98,16 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
     setActivePostId((prev) => (prev === id ? null : id));
   };
 
-  // Animation variants for the emoji dropdown
-  const dropdownVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.2, 1, 0.3, 1],
-      },
-    },
-  };
+  // Handle Share
+  const handleShare = (id) => {
+    const postToShare = allPosts.find((prev) => prev.id === id);
 
-  const emojiVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.1,
-        duration: 0.2,
-      },
-    }),
-    hover: {
-      scale: 1.2, // Scale up
-      y: -5, // Move up slightly
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-      },
-    },
+    if (postToShare) {
+      setSharedPost(postToShare);
+      setOpenModal(true);
+    } else {
+      console.error("Post not found");
+    }
   };
 
   return (
@@ -112,15 +133,46 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
       </div>
 
       {/* Post Images */}
-      <div className="pt-3">
+      <div>
         {post?.postImages?.length > 0 && post?.postImages?.length === 1 && (
-          <div className="">
+          <div className="pt-3">
             {post?.postImages?.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt="post-img"
                 className="block max-h-[451.5px] w-full object-cover"
+              />
+            ))}
+          </div>
+        )}
+
+        {post?.postImages?.length > 0 && post?.postImages?.length === 3 && (
+          <div className="grid grid-cols-2 gap-3 p-2 pt-3">
+            {post?.postImages?.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="post-img"
+                className={cn("", {
+                  "col-span-1 row-span-1 h-[155.078px] w-full object-cover":
+                    index === 0 || index === 1,
+                  "col-span-2 row-span-2 h-[283px] w-full object-cover":
+                    index === 2,
+                })}
+              />
+            ))}
+          </div>
+        )}
+
+        {post?.postImages?.length > 0 && post?.postImages?.length === 2 && (
+          <div className="grid grid-cols-2 gap-3 p-2 pt-3">
+            {post?.postImages?.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="post-img"
+                className="h-[229.5px] w-full object-cover"
               />
             ))}
           </div>
@@ -145,11 +197,16 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
           </div>
         </div>
 
-        <div className="flex space-x-2 py-1.5">
+        <div className="flex space-x-2 py-1">
           {post?.postHashtags?.map((item, index) => (
             <p
               key={index}
-              className="flex items-center text-[13.6px] font-medium text-titleColor"
+              className={cn(
+                "flex items-center text-[13.6px] font-medium text-titleColor",
+                {
+                  "font-semibold text-[#4a9cd2]": index === 0,
+                },
+              )}
             >
               {item}
             </p>
@@ -228,7 +285,7 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
       <div className="relative mb-3 flex w-full items-center justify-around border-y border-gray-100 bg-[#edf7fb40] py-3 text-gray-600">
         {/* React */}
         <div
-          onClick={() => handleReaction(post.id)} // Use a function to handle click
+          onClick={() => handleReaction(post.id)}
           className="flex cursor-pointer items-center gap-1"
         >
           <BsEmojiSmile />
@@ -242,7 +299,10 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
         </div>
 
         {/* Share */}
-        <div className="flex cursor-pointer items-center gap-1">
+        <div
+          onClick={() => handleShare(post.id)}
+          className="flex cursor-pointer items-center gap-1"
+        >
           <GoShare />
           <p className="text-sm font-medium">Share</p>
         </div>
@@ -287,6 +347,140 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
           </motion.div>
         )}
       </div>
+
+      {/* Share Modal */}
+      <Dialog open={openModal} onOpenChange={setOpenModal}>
+        <DialogContent className="flex flex-col p-0">
+          <div className="flex items-center justify-between border-b p-[12px] font-roboto text-titleColor">
+            <div className="flex flex-1 items-center gap-2">
+              <h3 className="text-[13.3px] font-bold">Share As Post</h3>
+
+              <BiChevronDown size={18} />
+            </div>
+
+            <MdClose onClick={() => setOpenModal(false)} size={25} />
+          </div>
+
+          {/* Middle Content */}
+          <div className="flex-1 border-b px-3 pb-3">
+            <div className="flex items-center gap-3">
+              <img
+                src={sharedPost.profilePicture}
+                alt="shared-profile-picture"
+                className="size-[50px] rounded-full object-cover"
+              />
+
+              <div className="flex flex-col gap-1 text-gray-600">
+                <h3 className="font-montserrat text-[13.5px] font-bold">
+                  {sharedPost.name}
+                </h3>
+
+                <div className="flex items-center gap-1 rounded border border-gray-300 px-2 py-1.5">
+                  <SlGlobe />
+
+                  <p className="font-roboto text-sm font-medium">Public</p>
+
+                  <BiChevronDown size={18} />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <input
+                type="text"
+                className="w-full rounded border border-gray-300 bg-transparent px-3 py-1 font-roboto outline-none placeholder:text-gray-600"
+                placeholder="Write a comment..."
+              />
+            </div>
+
+            {/* Shared Post Images */}
+            <div>
+              {sharedPost?.postImages?.length > 0 &&
+                sharedPost?.postImages?.length === 1 && (
+                  <div className="pt-3">
+                    {sharedPost?.postImages?.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt="post-img"
+                        className="block h-[233px] w-full object-cover"
+                      />
+                    ))}
+                  </div>
+                )}
+
+              {sharedPost?.postImages?.length > 0 &&
+                sharedPost?.postImages?.length === 3 && (
+                  <div className="grid grid-cols-2 gap-3 pt-3">
+                    {sharedPost?.postImages?.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt="post-img"
+                        className={cn("", {
+                          "col-span-1 row-span-1 h-[116.5px] w-full object-cover":
+                            index === 0 || index === 1,
+                          "col-span-2 row-span-2 h-[116.5px] w-full object-cover":
+                            index === 2,
+                        })}
+                      />
+                    ))}
+                  </div>
+                )}
+
+              {sharedPost?.postImages?.length > 0 &&
+                sharedPost?.postImages?.length === 2 && (
+                  <div className="grid w-[466px] grid-cols-2 gap-3 pt-3">
+                    {sharedPost?.postImages?.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt="post-img"
+                        className="h-[233px] w-full object-cover"
+                      />
+                    ))}
+                  </div>
+                )}
+            </div>
+
+            {/* Shared Post Content */}
+            <div className="pt-3 font-montserrat">
+              <h1 className="flex-1 font-montserrat text-[15px] font-bold text-titleColor">
+                {post?.postTitle}
+              </h1>
+
+              <div className="flex space-x-2 py-1">
+                {sharedPost?.postHashtags?.map((item, index) => (
+                  <p
+                    key={index}
+                    className={cn(
+                      "flex items-center text-[13.6px] font-medium text-titleColor",
+                      {
+                        "font-semibold text-[#4a9cd2]": index === 0,
+                        "font-roboto font-medium text-textColor": index >= 1,
+                      },
+                    )}
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
+
+              {sharedPost?.postImages?.length === 0 && (
+                <p className="font-roboto text-[15px] text-textColor">
+                  {post?.postDescription}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="flex justify-end px-3 pb-3">
+            <button className="w-fit rounded-md bg-primary px-3 py-2 font-montserrat text-sm font-semibold text-white">
+              Shared Post
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

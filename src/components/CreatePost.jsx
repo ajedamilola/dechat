@@ -7,11 +7,11 @@ import { MdClose } from "react-icons/md";
 
 const CreatePost = () => {
   const [hideComponent, setHideComponent] = useState(false);
+  const [react, setReact] = useState(false);
   const [reactionDetails, setReactionDetails] = useState({
     placeholder: "",
     icon: "",
   });
-  const [react, setReact] = useState(false);
   const [bgColors, setBgColors] = useState({
     firstColor: "",
     lastColor: "",
@@ -24,14 +24,14 @@ const CreatePost = () => {
           <>
             <div
               style={{
-                background: `linear-gradient(to bottom, ${bgColors.firstColor}, ${bgColors.lastColor})`,
+                background: `linear-gradient(to bottom right, ${bgColors.firstColor}, ${bgColors.lastColor})`,
               }}
               className="relative flex h-[230px] w-full items-center justify-center rounded-md border-gray-400"
             >
-              <div className="">
+              <div className="w-[80%]">
                 <input
                   type="text"
-                  className="border-none bg-transparent text-center font-roboto text-xl tracking-tight text-gray-800 outline-none placeholder:text-gray-600"
+                  className="w-full border-none bg-transparent text-center font-roboto text-xl capitalize tracking-tight text-gray-800 outline-none placeholder:text-gray-600"
                   placeholder="Write Something Here..."
                 />
               </div>
