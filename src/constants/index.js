@@ -210,17 +210,30 @@ export const emojiType = [
 ];
 
 export const emojis = [
-  "/src/assets/svg/emoji/smile.svg",
-
-  "/src/assets/svg/emoji/cry.svg",
-
-  "/src/assets/svg/emoji/angry.svg",
-
-  "/src/assets/svg/emoji/wow.svg",
-
-  "/src/assets/svg/emoji/love.svg",
-
-  "/src/assets/svg/emoji/haha.svg",
+  {
+    name: "smile",
+    img: "/src/assets/svg/emoji/smile.svg",
+  },
+  {
+    name: "cry",
+    img: "/src/assets/svg/emoji/cry.svg",
+  },
+  {
+    name: "angry",
+    img: "/src/assets/svg/emoji/angry.svg",
+  },
+  {
+    name: "wow",
+    img: "/src/assets/svg/emoji/wow.svg",
+  },
+  {
+    name: "love",
+    img: "/src/assets/svg/emoji/love.svg",
+  },
+  {
+    name: "haha",
+    img: "/src/assets/svg/emoji/haha.svg",
+  },
 ];
 
 export const allPosts = [

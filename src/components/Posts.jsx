@@ -7,6 +7,9 @@ import { useEffect, useRef, useState } from "react";
 import { GoComment, GoShare } from "react-icons/go";
 import { BsEmojiSmile } from "react-icons/bs";
 import { motion } from "framer-motion";
+import Tooltip from "rc-tooltip";
+import "rc-tooltip/assets/bootstrap.css";
+// import "../../assets/bootstrap_white.less";
 
 const Posts = () => {
   const [activePostId, setActivePostId] = useState(null);
@@ -75,6 +78,15 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
         duration: 0.2,
       },
     }),
+    hover: {
+      scale: 1.2, // Scale up
+      y: -5, // Move up slightly
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 10,
+      },
+    },
   };
 
   return (
@@ -245,16 +257,32 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
             className="absolute -top-[35px] left-14 flex items-center gap-4 rounded bg-white px-[15px] py-[12px] shadow"
           >
             {emojis.map((emoji, index) => (
-              <motion.img
+              <Tooltip
                 key={index}
-                src={emoji}
-                alt="emojis"
-                className="size-[25px]"
-                variants={emojiVariants}
-                initial="hidden"
-                animate="visible"
-                custom={index} // Pass index for stagger effect
-              />
+                placement="top"
+                overlay={emoji.name}
+                showArrow={false}
+                overlayInnerStyle={{
+                  borderRadius: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "45px",
+                  height: "20px",
+                  minHeight: "20px",
+                }}
+              >
+                <motion.img
+                  src={emoji.img}
+                  alt="emojis"
+                  className="size-[25px] cursor-pointer"
+                  variants={emojiVariants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover="hover"
+                  custom={index}
+                />
+              </Tooltip>
             ))}
           </motion.div>
         )}
