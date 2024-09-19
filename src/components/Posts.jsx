@@ -358,7 +358,11 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
               <BiChevronDown size={18} />
             </div>
 
-            <MdClose onClick={() => setOpenModal(false)} size={25} />
+            <MdClose
+              onClick={() => setOpenModal(false)}
+              size={23}
+              className="cursor-pointer"
+            />
           </div>
 
           {/* Middle Content */}
