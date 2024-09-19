@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Stories from "../components/Stories";
 import Profile from "../components/Profile";
+import CreatePost from "../components/CreatePost";
 import Posts from "../components/Posts";
 
 const NewsFeed = () => {
@@ -21,12 +22,13 @@ const NewsFeed = () => {
           <div className="no-scrollbar max-h-screen flex-1 overflow-y-auto">
             <Stories />
 
-            <div className="flex w-full flex-col-reverse gap-5 pt-4 lg:flex-row">
+            <div className="flex w-full flex-col-reverse gap-5 pt-0 md:pt-4 lg:flex-row">
               <div className="w-full lg:w-[280px]">
                 <Profile />
               </div>
 
               <div className="flex-1">
+                <CreatePost />
                 <Posts />
               </div>
 

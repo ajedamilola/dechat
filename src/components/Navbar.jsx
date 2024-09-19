@@ -104,18 +104,18 @@ const Navbar = () => {
 
           {/* message-icon */}
           <div className="relative hidden md:block">
-            <FaRegMessage size={20} />
+            <FaRegMessage size={16} />
 
             <div className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-green-500 text-[10px] font-semibold">
               2
             </div>
           </div>
 
-          <HiOutlineMoon size={20} />
+          <HiOutlineMoon size={16} />
 
           {/* bell-icon */}
           <div className="relative hidden md:block">
-            <FaRegBell size={20} />
+            <FaRegBell size={16} />
 
             <div className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-semibold">
               2
@@ -128,20 +128,20 @@ const Navbar = () => {
               <img
                 src="/src/assets/user-sm/1.jpg"
                 alt="avatar"
-                className="size-10 rounded-full object-cover"
+                className="size-[36px] rounded-full object-cover"
               />
 
               {/* active-icon */}
-              <div className="absolute -right-1 top-0 flex size-[14px] items-center justify-center rounded-full bg-white text-[10px] font-semibold">
-                <div className="size-2 rounded-full bg-green-500"></div>
+              <div className="absolute -right-1 top-0 flex size-[13px] items-center justify-center rounded-full bg-white text-[10px] font-semibold">
+                <div className="size-[7px] rounded-full bg-green-500"></div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold leading-[1.4]">
+              <h3 className="text-[12px] font-semibold leading-[1.4]">
                 Mary Thompson
               </h3>
-              <p className="text-[13px] leading-[1.1]">active now</p>
+              <p className="text-[12px] leading-[1.1]">active now</p>
             </div>
           </div>
         </div>

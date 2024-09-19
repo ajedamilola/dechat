@@ -8,6 +8,8 @@ export default {
         primary: "#0389c9",
         bgColor: "#edf7fc",
         hoverColor: "#f5f5f5",
+        titleColor: "#51595E",
+        textColor: "#647589",
       },
       fontFamily: {
         ["montserrat"]: ["montserrat", "sans-serif"],

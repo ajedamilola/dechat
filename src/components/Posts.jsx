@@ -1,148 +1,233 @@
-import React, { useState } from "react";
-import { BiChevronDown } from "react-icons/bi";
-import { BsCameraVideo } from "react-icons/bs";
 import { RxDotsHorizontal } from "react-icons/rx";
-import { colors, reactions } from "../constants";
-import { MdClose } from "react-icons/md";
+import { allPosts, emojis, people } from "../constants";
+import moment from "moment";
+import { cn } from "../lib/utils";
+import { MdBookmark, MdOutlineBookmarkBorder } from "react-icons/md";
+import { useState } from "react";
+import { GoComment, GoShare } from "react-icons/go";
+import { BsEmojiSmile } from "react-icons/bs";
 
 const Posts = () => {
-  const [hideComponent, setHideComponent] = useState(false);
-  const [reactionDetails, setReactionDetails] = useState({
-    placeholder: "",
-    icon: "",
-  });
-  const [react, setReact] = useState(false);
-  const [bgColors, setBgColors] = useState({
-    firstColor: "",
-    lastColor: "",
-  });
-
   return (
-    <div className="w-full">
-      <div className="w-full rounded-lg bg-white px-4 py-4 text-gray-500">
-        {hideComponent ? (
-          <>
-            <div
-              style={{
-                background: `linear-gradient(to bottom, ${bgColors.firstColor}, ${bgColors.lastColor})`,
-              }}
-              className="relative flex h-[230px] w-full items-center justify-center rounded-md border-gray-400"
-            >
-              <div className="">
-                <input
-                  type="text"
-                  className="border-none bg-transparent text-center font-roboto text-xl tracking-tight text-gray-800 outline-none placeholder:text-gray-600"
-                  placeholder="Write Something Here..."
-                />
-              </div>
-
-              {/* Close button */}
-              <div
-                className="absolute -right-3 -top-2"
-                onClick={() => setHideComponent(false)}
-              >
-                <MdClose size={23} className="cursor-pointer text-primary" />
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="flex items-center justify-between">
-              <div className="flex w-full items-center gap-4">
-                <h1 className="text-xl font-semibold">Create Post</h1>
-
-                <div className="flex items-center gap-0.5">
-                  <p className="font-roboto text-[12px] font-medium">Public </p>
-                  <BiChevronDown size={19} />
-                </div>
-
-                <div className="flex items-center gap-1">
-                  <BsCameraVideo size={19} />
-                  <p className="font-roboto text-[12px] font-medium">Go live</p>
-                </div>
-              </div>
-
-              <div>
-                <RxDotsHorizontal size={13} />
-              </div>
-            </div>
-
-            {/* Input */}
-            <div className="my-2 flex w-full items-center justify-between rounded-md bg-[#EDF7FB] pr-3">
-              <input
-                type="text"
-                className="flex-1 border-none bg-transparent px-3 py-3 font-roboto text-[13px] outline-none placeholder:text-black/60"
-                placeholder="Write Something Here."
-              />
-              <img
-                src="/src/assets/svg/emoji/sign.webp"
-                alt="sign"
-                className="w-4"
-              />
-            </div>
-          </>
-        )}
-
-        {/* Color Palette */}
-        <div className="flex items-center gap-2 py-4">
-          {colors.map((item, index) => (
-            <div
-              key={index}
-              className="size-[20px] cursor-pointer rounded-full"
-              style={{
-                background: `linear-gradient(to bottom, ${item.first}, ${item.last})`,
-              }}
-              onClick={() => {
-                setBgColors({ firstColor: item.first, lastColor: item.last });
-                setHideComponent(true);
-              }}
-            ></div>
-          ))}
+    <div className="mt-2 flex flex-col gap-4">
+      {/* posts */}
+      {allPosts.map((post) => (
+        <div key={post.id} className="rounded bg-white">
+          <SinglePost post={post} />
         </div>
-
-        {/* reaction inputs */}
-        {react && (
-          <div className="flex items-center justify-between rounded border px-2 font-roboto text-[12px]">
-            <reactionDetails.icon size={20} />
-
-            <input
-              type="text"
-              className="flex-1 border-none py-2 pl-2 outline-none placeholder:text-gray-600"
-              placeholder={reactionDetails.placeholder}
-            />
-
-            <MdClose
-              onClick={() => setReact(false)}
-              className="cursor-pointer"
-            />
-          </div>
-        )}
-
-        {/* reactions */}
-        <div className="pt-3 font-roboto">
-          <div className="flex flex-wrap gap-x-2 gap-y-2">
-            {reactions.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  setReact(true);
-                  setReactionDetails({
-                    placeholder: item.placeholder,
-                    icon: item.icon,
-                  });
-                }}
-                className="flex cursor-pointer items-center gap-1 rounded border px-2 py-1.5"
-              >
-                <item.icon size={20} />
-
-                <p className="text-[14px] font-medium">{item.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
 
 export default Posts;
+
+const SinglePost = ({ post }) => {
+  const [toggle, setToggle] = useState(false);
+
+  return (
+    <div className="">
+      {/* post header */}
+      <div className="flex items-center justify-between p-3 pb-0">
+        <div className="flex items-center gap-3">
+          <img
+            src={post.profilePicture}
+            alt="profile"
+            className="size-14 rounded-full object-cover"
+          />
+
+          <div>
+            <h2 className="text-[13.6px] font-semibold text-titleColor">
+              {post.name}
+            </h2>
+            <p className="font-roboto text-[11.6px] font-medium text-textColor">
+              {moment(post.timePosted).fromNow()}
+            </p>
+          </div>
+        </div>
+
+        <RxDotsHorizontal size={14} />
+      </div>
+
+      <div className="pt-3">
+        {post?.postImages?.length > 0 && post?.postImages?.length === 1 && (
+          <div className="">
+            {post?.postImages?.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="post-img"
+                className="block max-h-[451.5px] w-full object-cover"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="p-2.5 pb-2">
+        {post?.postImages?.length > 0 && post?.postImages?.length === 3 && (
+          <div className="grid grid-cols-2 gap-3 pb-2">
+            {post?.postImages?.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="post-img"
+                className={cn("", {
+                  "col-span-1 row-span-1 h-[155.078px] w-full object-cover":
+                    index === 0 || index === 1,
+                  "col-span-2 row-span-2 h-[283px] w-full object-cover":
+                    index === 2,
+                })}
+              />
+            ))}
+          </div>
+        )}
+
+        {post?.postImages?.length > 0 && post?.postImages?.length === 2 && (
+          <div className="grid grid-cols-2 gap-3 pb-2">
+            {post?.postImages?.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="post-img"
+                className="h-[229.5px] w-full object-cover"
+              />
+            ))}
+          </div>
+        )}
+
+        <div className="">
+          <div className="flex items-center justify-between">
+            <h1 className="flex-1 text-[17px] font-bold text-titleColor">
+              {post?.postTitle}
+            </h1>
+
+            <div
+              onClick={() => setToggle((prev) => !prev)}
+              className="flex size-[30px] cursor-pointer items-center justify-center rounded bg-bgColor"
+            >
+              {toggle ? (
+                <MdBookmark size={14} className="text-gray-500" />
+              ) : (
+                <MdOutlineBookmarkBorder size={14} className="text-gray-400" />
+              )}
+            </div>
+          </div>
+
+          <div className="flex space-x-2 py-1.5">
+            {post?.postHashtags?.map((item, index) => (
+              <p
+                key={index}
+                className={cn(
+                  "flex items-center text-[13.6px] font-medium text-titleColor",
+                  {
+                    "font-semibold text-[#4a9cd2]": index === 0,
+                  },
+                )}
+              >
+                {item}
+              </p>
+            ))}
+          </div>
+
+          <p className="font-roboto text-[15px] text-textColor">
+            {post?.postDescription}
+          </p>
+
+          <div className="flex items-center gap-2">
+            <div className="relative flex items-center py-2">
+              {people.map((item, index) => (
+                <img
+                  src={item}
+                  key={index}
+                  alt="react-img"
+                  className={cn(
+                    "object-cove size-[27px] rounded-full border-2 border-white",
+                    {
+                      "absolute left-3.5 z-10": index === 1,
+                      "absolute left-[26px] z-10": index === 2,
+                    },
+                  )}
+                />
+              ))}
+            </div>
+
+            <p className="pl-6 font-roboto text-[12px] font-medium text-titleColor">
+              +{post?.numberOfPostReactions} people react to this post
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div className="flex items-center justify-between px-3 py-3">
+        <div className="flex flex-1 items-center gap-3">
+          <div className="flex space-x-2">
+            {post.postReactions.map((reaction, index) => {
+              const emoji = emojis.find(
+                (emoji) => Object.keys(emoji)[0] === reaction,
+              );
+              return (
+                emoji && (
+                  <img
+                    key={index}
+                    src={emoji[reaction]}
+                    alt={reaction}
+                    className="h-[24px] w-[24px]"
+                  />
+                )
+              );
+            })}
+          </div>
+
+          <p className="font-roboto text-[12px] font-medium text-titleColor">
+            +{Number(post?.numberOfPostReactions) - 43}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 text-gray-500">
+          <div className="flex items-center gap-0.5">
+            <GoComment size={18} />
+
+            <p className="font-roboto text-[13px] font-bold">
+              {Number(post?.numberOfPostReactions) - 76}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-0.5">
+            <GoShare size={18} />
+
+            <p className="font-roboto text-[13px] font-bold">
+              {post?.numberOfShares}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/*  */}
+      <div className="mb-3 flex w-full items-center justify-around border-y border-gray-100 bg-[#edf7fb40] py-3 text-gray-600">
+        {/* React */}
+        <div className="flex cursor-pointer items-center gap-1">
+          <BsEmojiSmile />
+
+          <p className="text-sm font-medium">React</p>
+        </div>
+
+        {/* Comment */}
+        <div className="flex cursor-pointer items-center gap-1">
+          <GoComment />
+
+          <p className="text-sm font-medium">Comment</p>
+        </div>
+
+        {/* Share */}
+        <div className="flex cursor-pointer items-center gap-1">
+          <GoShare />
+
+          <p className="text-sm font-medium">Share</p>
+        </div>
+      </div>
+    </div>
+  );
+};
