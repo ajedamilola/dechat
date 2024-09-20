@@ -65,37 +65,37 @@ export const sidebar = [
 
 export const stories = [
   {
-    name: "Joseph Water",
+    name: "Scarlett Lewis",
     picture: "/src/assets/story/6.jpg",
     color: ["0deg", "#e18d1e", "rgba(0, 212, 255, 0)"],
   },
   {
-    name: "Princesa Smith",
+    name: "Charlotte White",
     picture: "/src/assets/story/2.jpg",
     color: ["0deg", "#ed8079", "rgba(0,212,255,0)"],
   },
   {
-    name: "Joyce Adams",
+    name: "Aria Robinson",
     picture: "/src/assets/story/1.jpg",
     color: ["0deg", "#a38a7b", "rgba(0,212,255,0)"],
   },
   {
-    name: "May Gibson",
+    name: "Gabriel Phillips",
     picture: "/src/assets/story/3.jpg",
     color: ["0deg", "#fcd101", "rgba(0, 212, 255, 0)"],
   },
   {
-    name: "Daniella Jones",
+    name: "Stella Adams",
     picture: "/src/assets/story/5.jpg",
     color: ["0deg", "#ed8079", "rgba(0, 212, 255, 0)"],
   },
   {
-    name: "Stella Miles",
+    name: "Layla Scott",
     picture: "/src/assets/story/7.jpg",
     color: ["0deg", "#174d76", "rgba(0,212,255,0)"],
   },
   {
-    name: "Andrew Sabastine",
+    name: "Dylan Edwards",
     picture: "/src/assets/story/8.jpg",
     color: ["0deg", "rgba(0,0,0, 1)", "rgba(0, 212, 255, 0)"],
   },
@@ -401,36 +401,37 @@ export const allPosts = [
   },
 ];
 
-// export const posts = [
-//   {
-//     id: "70137403719",
-//     name: "",
-//     profilePicture: "",
-//     timePosted: "",
-//     postImages: ["", ""],
-//     postTitle: "",
-//     postHashtags: ["", "", ""],
-//     postDescription: "",
-//     numberOfPostReactions: "",
-//     numberOfShares: "",
-//     postReactions: ["love", "angry", "cry", "haha", "smile", "wow"],
-//     comments: [
-//       {
-//         id: 23223,
-//         commenterName: "",
-//         profilePicture: "",
-//         message: "",
-//         timePosted: "",
-//         repliedComment: [
-//           {
-//             id: 88783,
-//             replierName: "",
-//             profilePicture: "",
-//             message: "",
-//             timePosted: "",
-//           },
-//         ],
-//       },
-//     ],
-//   },
-// ];
+export const friendsSuggest = [
+  {
+    name: "Justin Mandes",
+    picture: "/src/assets/friends/men-1.jpeg",
+  },
+  {
+    name: "Harper Thomas",
+    picture: "/src/assets/friends/lady-1.jpeg",
+  },
+  {
+    name: "Noah Rodriguez",
+    picture: "/src/assets/friends/men-2.jpeg",
+  },
+  {
+    name: "Benjamin Young",
+    picture: "/src/assets/friends/men-3.jpeg",
+  },
+  {
+    name: "Amelia Anderson",
+    picture: "/src/assets/friends/lady-2.jpeg",
+  },
+  {
+    name: "Abigail Garcia",
+    picture: "/src/assets/friends/lady-3.jpeg",
+  },
+  {
+    name: "Liam Miller",
+    picture: "/src/assets/friends/men-4.jpeg",
+  },
+  {
+    name: "Isabella Wilson",
+    picture: "/src/assets/friends/lady-4.jpeg",
+  },
+];

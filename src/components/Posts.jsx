@@ -111,7 +111,7 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
   };
 
   return (
-    <div className="">
+    <div>
       {/* Post header */}
       <div className="flex items-center justify-between p-3 pb-0">
         <div className="flex items-center gap-3">
@@ -213,6 +213,7 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
           ))}
         </div>
 
+        {/* Post Description */}
         <p className="font-roboto text-[15px] text-textColor">
           {post?.postDescription}
         </p>
@@ -225,10 +226,17 @@ const SinglePost = ({ post, isActive, setActivePostId }) => {
                 src={item}
                 key={index}
                 alt="react-img"
-                className="size-[27px] rounded-full border-2 border-white object-cover"
+                className={cn(
+                  "size-[27px] rounded-full border-2 border-white object-cover",
+                  {
+                    "absolute left-4": index === 1,
+                    "absolute left-8": index === 2,
+                  },
+                )}
               />
             ))}
           </div>
+
           <p className="pl-6 font-roboto text-[12px] font-medium text-titleColor">
             +{post?.numberOfPostReactions} people react to this post
           </p>

@@ -5,6 +5,7 @@ import Stories from "../components/Stories";
 import Profile from "../components/Profile";
 import CreatePost from "../components/CreatePost";
 import Posts from "../components/Posts";
+import FriendSuggestion from "@/components/FriendSuggestion";
 
 const NewsFeed = () => {
   return (
@@ -23,11 +24,12 @@ const NewsFeed = () => {
             <Stories />
 
             <div className="flex w-full flex-col-reverse gap-5 pt-0 md:pt-4 lg:flex-row">
-              <div className="w-full lg:w-[280px]">
+              <div className="flex w-full flex-col gap-4 lg:w-[280px]">
                 <Profile />
+                <FriendSuggestion />
               </div>
 
-              <div className="flex-1">
+              <div className="flex flex-1 flex-col gap-2">
                 <CreatePost />
                 <Posts />
               </div>

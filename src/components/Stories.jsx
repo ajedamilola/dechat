@@ -2,7 +2,6 @@ import { FaPlus } from "react-icons/fa6";
 import { stories } from "../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay } from "swiper/modules"; // Ensure proper import
 import "swiper/css/autoplay";
 
 const Stories = () => {
@@ -37,11 +36,10 @@ const Stories = () => {
               backgroundSize: "cover",
               backgroundPosition: "50%",
               backgroundRepeat: "no-repeat",
-              display: "block",
             }}
-            className="relative flex h-[148px] w-[129px] items-end justify-end rounded-xl pl-4 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[190px]"
+            className="flex h-[148px] w-[129px] items-end rounded-xl pb-3 pl-4 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[190px]"
           >
-            <div className="absolute bottom-3 left-4 flex flex-col">
+            <div className="flex flex-col">
               <h4 className="text-sm font-semibold text-white">{item.name}</h4>
 
               <p className="text-[11px] font-medium text-white">Active Now</p>
