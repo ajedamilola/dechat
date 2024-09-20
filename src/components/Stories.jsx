@@ -6,7 +6,7 @@ import "swiper/css/autoplay";
 
 const Stories = () => {
   return (
-    <div className="">
+    <div className="p-3 md:p-0">
       <Swiper
         slidesPerView={"auto"}
         grabCursor={true}

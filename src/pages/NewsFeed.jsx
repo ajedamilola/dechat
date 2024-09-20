@@ -18,7 +18,7 @@ const NewsFeed = () => {
           <Navbar />
         </div>
 
-        <div className="mt-16 flex flex-1 gap-4 overflow-hidden p-3 md:pr-3 lg:p-5 lg:px-2">
+        <div className="mt-16 flex flex-1 gap-4 overflow-hidden p-0 md:pr-3 lg:p-5 lg:px-2">
           <div className="z-[99] hidden md:block md:w-[260px] lg:w-[220px] xl:w-[220px] 2xl:w-[300px]">
             <Sidebar />
           </div>
