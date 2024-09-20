@@ -10,6 +10,7 @@ import Gallery from "@/components/Gallery";
 import CreatePost from "@/components/CreatePost";
 import Posts from "@/components/Posts";
 import Event from "@/components/Event";
+import BirthdayCard from "@/components/BirthdayCard";
 
 const NewsFeed = () => {
   return (
@@ -49,6 +50,7 @@ const NewsFeed = () => {
 
                   <div className="lg:sticky lg:top-0">
                     <Event />
+                    <BirthdayCard />
                   </div>
                 </div>
               </div>
