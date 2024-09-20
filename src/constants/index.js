@@ -501,3 +501,24 @@ export const games = [
     picture: "/src/assets/game/6.jpg",
   },
 ];
+
+export const galleryPhotos = [
+  {
+    picture: "/src/assets/story/1.jpg",
+  },
+  {
+    picture: "/src/assets/story/2.jpg",
+  },
+  {
+    picture: "/src/assets/story/3.jpg",
+  },
+  {
+    picture: "/src/assets/story/4.jpg",
+  },
+  {
+    picture: "/src/assets/story/5.jpg",
+  },
+  {
+    picture: "/src/assets/story/6.jpg",
+  },
+];
