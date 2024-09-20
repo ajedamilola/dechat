@@ -19,15 +19,15 @@ const NewsFeed = () => {
         </div>
 
         <div className="mt-16 flex flex-1 gap-4 overflow-hidden p-3 md:pr-3 lg:p-5 lg:px-2">
-          <div className="z-[99] hidden md:block md:w-[260px] lg:w-[220px]">
+          <div className="z-[99] hidden md:block md:w-[260px] lg:w-[220px] xl:w-[220px] 2xl:w-[300px]">
             <Sidebar />
           </div>
 
-          <div className="no-scrollbar max-h-screen flex-1 overflow-y-scroll">
+          <div className="no-scrollbar+ max-h-screen flex-1 overflow-y-scroll">
             <Stories />
 
-            <div className="flex w-full flex-col-reverse gap-5 pt-0 md:pt-4 lg:flex-row">
-              <div className="flex w-full flex-col gap-4 lg:w-[280px]">
+            <div className="flex w-full flex-col-reverse gap-4 pt-0 md:pt-4 lg:flex-row">
+              <div className="flex w-full flex-col gap-4 lg:w-[280px] xl:w-[260px] 2xl:w-[380px]">
                 <Profile />
                 <FriendSuggestion />
                 <div className="sticky top-0">
@@ -35,14 +35,16 @@ const NewsFeed = () => {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col gap-2">
-                <CreatePost />
-                <Posts />
-              </div>
+              <div className="flex flex-1 flex-col gap-4 lg:flex-row">
+                <div className="flex flex-1 flex-col gap-2">
+                  <CreatePost />
+                  <Posts />
+                </div>
 
-              <div className="flex w-full flex-col gap-3 lg:w-[280px]">
-                <Games />
-                <Gallery />
+                <div className="flex w-full flex-col gap-3 lg:w-[280px] xl:w-[260px] 2xl:w-[380px]">
+                  <Games />
+                  <Gallery />
+                </div>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ const Stories = () => {
         className="z-10"
         spaceBetween={12}
       >
-        <SwiperSlide className="relative h-[148px] w-[129px] rounded-xl border border-gray-400 p-2 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[200px]">
+        <SwiperSlide className="relative h-[148px] w-[129px] rounded-xl border border-gray-400 p-2 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[200px] xl:h-[242.64px] xl:w-[211px] 2xl:h-[297.84px] 2xl:w-[259px]">
           <div className="story-1 h-full w-full rounded-xl blur-[2px]"></div>
 
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3">
@@ -37,7 +37,7 @@ const Stories = () => {
               backgroundPosition: "50%",
               backgroundRepeat: "no-repeat",
             }}
-            className="flex h-[148px] w-[129px] items-end rounded-xl pb-3 pl-4 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[190px]"
+            className="flex h-[148px] w-[129px] items-end rounded-xl pb-3 pl-4 md:h-[180px] md:w-[157px] lg:h-[234px] lg:w-[190px] xl:h-[242.64px] xl:w-[211px] 2xl:h-[297.84px] 2xl:w-[259px]"
           >
             <div className="flex flex-col">
               <h4 className="text-sm font-semibold text-white">{item.name}</h4>

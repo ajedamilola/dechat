@@ -5,6 +5,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   theme: {
     extend: {
+      screens: {
+        "2xl": "2560px",
+      },
       colors: {
         primary: "#0389c9",
         bgColor: "#edf7fc",

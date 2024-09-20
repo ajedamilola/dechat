@@ -34,11 +34,13 @@ const Gallery = () => {
             key={index}
             alt="photos"
             className={cn("", {
-              "col-span-1 row-span-1 size-[85.3px] object-cover": index <= 2,
-              "col-span-1 size-[85px] object-cover": index == 3,
-              "col-span-2 row-span-2 size-[175px] w-full object-cover":
+              "col-span-1 row-span-1 size-[154.6px] object-cover lg:size-[85.3px]":
+                index <= 2,
+              "col-span-1 size-[154.6px] object-cover lg:size-[85px]":
+                index == 3,
+              "col-span-2 row-span-2 size-[315px] w-full object-cover lg:size-[175px]":
                 index === 4,
-              "size-[85px] object-cover": index === 5,
+              "size-[154.6px] object-cover lg:size-[85px]": index === 5,
             })}
           />
         ))}

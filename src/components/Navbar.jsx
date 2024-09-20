@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-primary text-white">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <nav className="mx-auto flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-5">
           <h1 className="text-xl font-extrabold">Dechat</h1>
 
