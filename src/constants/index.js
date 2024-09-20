@@ -243,8 +243,8 @@ export const allPosts = [
     profilePicture: "https://randomuser.me/api/portraits/men/1.jpg",
     timePosted: "2024-09-18T14:30:00Z",
     postImages: [
-      "/src/assets/post/16.jpg",
-      // "/src/assets/post/17.jpg",
+      // "/src/assets/post/16.jpg",
+      "/src/assets/post/17.jpg",
       // "/src/assets/post/1.jpg",
     ],
 
@@ -304,8 +304,8 @@ export const allPosts = [
     profilePicture: "https://randomuser.me/api/portraits/women/5.jpg",
     timePosted: "2024-09-20T08:45:00Z",
     postImages: [
-      "https://images.unsplash.com/photo-1726519372376-6825c67bef15?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1726486896376-4d1340e2f672?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/src/assets/post/beach-3.jpeg",
+      "/src/assets/post/beach-2.jpeg",
     ],
     postTitle: "A Day at the Beach",
     postHashtags: ["#BeachDay", "#Sunshine", "#Relaxation", "#Summer"],
@@ -339,9 +339,9 @@ export const allPosts = [
     profilePicture: "https://randomuser.me/api/portraits/men/7.jpg",
     timePosted: "2024-09-21T16:00:00Z",
     postImages: [
-      "https://images.unsplash.com/photo-1521747116042-5a810fda9664",
-      "/src/assets/post/image.webp",
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      "/src/assets/post/nature-3.jpeg",
+      "/src/assets/post/nature-1.jpeg",
+      "/src/assets/post/nature-2.jpeg",
     ],
     postTitle:
       "Exploring the Majestic Beauty of Nature and Its Scenic Landscapes",
@@ -433,5 +433,71 @@ export const friendsSuggest = [
   {
     name: "Isabella Wilson",
     picture: "/src/assets/friends/lady-4.jpeg",
+  },
+];
+
+export const pagesLiked = [
+  {
+    name: "Chrimson Agency",
+    logo: "/src/assets/page-logo/1.jpg",
+    desc: "Clothing Store",
+    followers: "15",
+  },
+  {
+    name: "Digital Pixel",
+    logo: "/src/assets/page-logo/2.jpg",
+    desc: "Software Company",
+    followers: "128",
+  },
+  {
+    name: "The Angle Bar",
+    logo: "/src/assets/page-logo/3.jpg",
+    desc: "Disco Bar",
+    followers: "6",
+  },
+  {
+    name: "The Fivestar Food",
+    logo: "/src/assets/page-logo/4.jpg",
+    desc: "Restaurant Food",
+    followers: "29",
+  },
+  {
+    name: "Royal Watch",
+    logo: "/src/assets/page-logo/5.jpg",
+    desc: "Watch Shop",
+    followers: "33",
+  },
+];
+
+export const games = [
+  {
+    name: "Blood Strike",
+    followers: "22.7",
+    picture: "/src/assets/game/1.jpg",
+  },
+  {
+    name: "Aero Space",
+    followers: "40.8",
+    picture: "/src/assets/game/2.jpg",
+  },
+  {
+    name: "Gravick",
+    followers: "60",
+    picture: "/src/assets/game/3.jpg",
+  },
+  {
+    name: "Eden Blood",
+    followers: "97.2",
+    picture: "/src/assets/game/4.jpg",
+  },
+  {
+    name: "Star Wars",
+    followers: "200.6",
+    picture: "/src/assets/game/5.jpg",
+  },
+  {
+    name: "Super Mario",
+    followers: "354.8",
+    picture: "/src/assets/game/6.jpg",
   },
 ];

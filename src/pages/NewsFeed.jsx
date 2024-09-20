@@ -6,6 +6,8 @@ import Profile from "../components/Profile";
 import CreatePost from "../components/CreatePost";
 import Posts from "../components/Posts";
 import FriendSuggestion from "@/components/FriendSuggestion";
+import LikedPages from "@/components/LikedPages";
+import Games from "@/components/Games";
 
 const NewsFeed = () => {
   return (
@@ -20,13 +22,16 @@ const NewsFeed = () => {
             <Sidebar />
           </div>
 
-          <div className="no-scrollbar max-h-screen flex-1 overflow-y-auto">
+          <div className="no-scrollbar max-h-screen flex-1 overflow-y-scroll">
             <Stories />
 
             <div className="flex w-full flex-col-reverse gap-5 pt-0 md:pt-4 lg:flex-row">
               <div className="flex w-full flex-col gap-4 lg:w-[280px]">
                 <Profile />
                 <FriendSuggestion />
+                <div className="sticky top-0">
+                  <LikedPages />
+                </div>
               </div>
 
               <div className="flex flex-1 flex-col gap-2">
@@ -34,7 +39,9 @@ const NewsFeed = () => {
                 <Posts />
               </div>
 
-              <div className="w-full lg:w-[280px]"></div>
+              <div className="w-full lg:w-[280px]">
+                <Games />
+              </div>
             </div>
           </div>
         </div>

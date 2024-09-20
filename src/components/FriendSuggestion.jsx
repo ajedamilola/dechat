@@ -7,7 +7,7 @@ import { friendsSuggest } from "@/constants";
 const FriendSuggestion = () => {
   return (
     <div className="w-full rounded-lg bg-white p-[15px] font-montserrat">
-      <h1 className="text-[17px] font-semibold text-titleColor">
+      <h1 className="text-[17px] font-semibold text-black/75">
         Friend Suggestion
       </h1>
 
