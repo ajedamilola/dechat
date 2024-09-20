@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Stories from "../components/Stories";
-import Profile from "../components/Profile";
-import CreatePost from "../components/CreatePost";
-import Posts from "../components/Posts";
+import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+import Stories from "@/components/Stories";
+import Profile from "@/components/Profile";
+
 import FriendSuggestion from "@/components/FriendSuggestion";
 import LikedPages from "@/components/LikedPages";
 import Games from "@/components/Games";
+import Gallery from "@/components/Gallery";
+import CreatePost from "@/components/CreatePost";
+import Posts from "@/components/Posts";
 
 const NewsFeed = () => {
   return (
@@ -39,8 +40,9 @@ const NewsFeed = () => {
                 <Posts />
               </div>
 
-              <div className="w-full lg:w-[280px]">
+              <div className="flex w-full flex-col gap-3 lg:w-[280px]">
                 <Games />
+                <Gallery />
               </div>
             </div>
           </div>
