@@ -2,6 +2,7 @@ import React from "react";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { RxReload } from "react-icons/rx";
 import { LuForward } from "react-icons/lu";
+import { birthdayCardImg } from "@/assets";
 
 const Event = () => {
   return (
@@ -9,7 +10,7 @@ const Event = () => {
       <div
         className="h-[168px] w-full rounded-t-lg"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/src/assets/event/1.jpg")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${birthdayCardImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

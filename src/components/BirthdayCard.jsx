@@ -1,3 +1,4 @@
+import { user4 } from "@/assets";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa6";
 import { RiCake3Line } from "react-icons/ri";
@@ -8,8 +9,7 @@ const BirthdayCard = () => {
     <div
       className="mt-4 w-full rounded-sm p-[15px] text-white"
       style={{
-        background:
-          "linear-gradient(99deg, rgba(216, 53, 101, 0.9), rgba(187, 53, 216, 0.8)), url('/src/assets/event/birthday-bg.jpg')",
+        background: `linear-gradient(99deg, rgba(216, 53, 101, 0.9), rgba(187, 53, 216, 0.8)), url(${user4})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

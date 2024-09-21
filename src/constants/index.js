@@ -1,3 +1,57 @@
+import {
+  friendGroupIcon,
+  headphoneIcon,
+  newsIcon,
+  skyIcon,
+  starIcon,
+  commentIcon,
+  youtubeIcon,
+  cartIcon,
+  storyImg1,
+  storyImg2,
+  storyImg3,
+  storyImg5,
+  storyImg6,
+  storyImg7,
+  storyImg8,
+  user6,
+  user3,
+  user2,
+  smileEmoji,
+  cryEmoji,
+  angryEmoji,
+  wowEmoji,
+  loveEmoji,
+  hahaEmoji,
+  calenderIcon,
+  gameIcon,
+  happyPost,
+  beachPost3,
+  beachPost2,
+  naturePost1,
+  naturePost3,
+  naturePost2,
+  friendMen1,
+  friendLady1,
+  friendMen2,
+  friendMen3,
+  friendLady2,
+  friendLady3,
+  friendMen4,
+  friendLady4,
+  pageLogo1,
+  pageLogo2,
+  pageLogo3,
+  pageLogo4,
+  pageLogo5,
+  game1,
+  game2,
+  game3,
+  game4,
+  game5,
+  game6,
+  storyImg4,
+} from "@/assets";
 import { GrLocation } from "react-icons/gr";
 import { HiOutlineTag } from "react-icons/hi";
 import { IoCameraOutline } from "react-icons/io5";
@@ -23,80 +77,87 @@ export const recentSearch = [
 export const sidebar = [
   {
     name: "Newsfeed",
-    icon: "/src/assets/svg/sidebar-vector/news.svg",
+    icon: newsIcon,
   },
   {
     name: "Favorite",
-    icon: "/src/assets/svg/sidebar-vector/star.svg",
+    icon: starIcon,
   },
   {
     name: "Group",
-    icon: "/src/assets/svg/sidebar-vector/friends.svg",
+    icon: friendGroupIcon,
   },
   {
     name: "Music & Video",
-    icon: "/src/assets/svg/sidebar-vector/headphones.svg",
+    icon: headphoneIcon,
   },
   {
     name: "Weather",
-    icon: "/src/assets/svg/sidebar-vector/sky.svg",
+    icon: skyIcon,
   },
   {
     name: "Calender",
-    icon: "/src/assets/svg/sidebar-vector/calendar.svg",
+    icon: calenderIcon,
   },
   {
     name: "Games",
-    icon: "/src/assets/svg/sidebar-vector/games.svg",
+    icon: gameIcon,
   },
   {
     name: "News",
-    icon: "/src/assets/svg/sidebar-vector/comment.svg",
+    icon: commentIcon,
   },
   {
     name: "Live Streams",
-    icon: "/src/assets/svg/sidebar-vector/youtube.svg",
+    icon: youtubeIcon,
   },
   {
     name: "Shop",
-    icon: "/src/assets/svg/sidebar-vector/cart.svg",
+    icon: cartIcon,
   },
 ];
 
 export const stories = [
   {
     name: "Scarlett Lewis",
-    picture: "/src/assets/story/6.jpg",
+
+    picture: storyImg6,
     color: ["0deg", "#e18d1e", "rgba(0, 212, 255, 0)"],
   },
   {
     name: "Charlotte White",
-    picture: "/src/assets/story/2.jpg",
+
+    picture: storyImg2,
     color: ["0deg", "#ed8079", "rgba(0,212,255,0)"],
   },
   {
     name: "Aria Robinson",
-    picture: "/src/assets/story/1.jpg",
+
+    picture: storyImg1,
     color: ["0deg", "#a38a7b", "rgba(0,212,255,0)"],
   },
   {
     name: "Gabriel Phillips",
-    picture: "/src/assets/story/3.jpg",
+
+    picture: storyImg3,
     color: ["0deg", "#fcd101", "rgba(0, 212, 255, 0)"],
   },
   {
     name: "Stella Adams",
-    picture: "/src/assets/story/5.jpg",
+
+    picture: storyImg5,
     color: ["0deg", "#ed8079", "rgba(0, 212, 255, 0)"],
   },
   {
     name: "Layla Scott",
-    picture: "/src/assets/story/7.jpg",
+
+    picture: storyImg7,
     color: ["0deg", "#174d76", "rgba(0,212,255,0)"],
   },
   {
     name: "Dylan Edwards",
-    picture: "/src/assets/story/8.jpg",
+
+    picture: storyImg8,
     color: ["0deg", "rgba(0,0,0, 1)", "rgba(0, 212, 255, 0)"],
   },
 ];
@@ -182,57 +243,53 @@ export const reactions = [
   },
 ];
 
-export const people = [
-  "/src/assets/user-sm/6.jpg",
-  "/src/assets/user-sm/3.jpg",
-  "/src/assets/user-sm/image-2.webp",
-];
+export const people = [user6, user3, user2];
 
 export const emojiType = [
   {
-    smile: "/src/assets/svg/emoji/smile.svg",
+    smile: smileEmoji,
   },
   {
-    cry: "/src/assets/svg/emoji/cry.svg",
+    cry: cryEmoji,
   },
   {
-    angry: "/src/assets/svg/emoji/angry.svg",
+    angry: angryEmoji,
   },
   {
-    wow: "/src/assets/svg/emoji/wow.svg",
+    wow: wowEmoji,
   },
   {
-    love: "/src/assets/svg/emoji/love.svg",
+    love: loveEmoji,
   },
   {
-    haha: "/src/assets/svg/emoji/haha.svg",
+    haha: hahaEmoji,
   },
 ];
 
 export const emojis = [
   {
     name: "smile",
-    img: "/src/assets/svg/emoji/smile.svg",
+    img: smileEmoji,
   },
   {
     name: "cry",
-    img: "/src/assets/svg/emoji/cry.svg",
+    img: cryEmoji,
   },
   {
     name: "angry",
-    img: "/src/assets/svg/emoji/angry.svg",
+    img: angryEmoji,
   },
   {
     name: "wow",
-    img: "/src/assets/svg/emoji/wow.svg",
+    img: wowEmoji,
   },
   {
     name: "love",
-    img: "/src/assets/svg/emoji/love.svg",
+    img: loveEmoji,
   },
   {
     name: "haha",
-    img: "/src/assets/svg/emoji/haha.svg",
+    img: hahaEmoji,
   },
 ];
 
@@ -242,11 +299,7 @@ export const allPosts = [
     name: "John Doe",
     profilePicture: "https://randomuser.me/api/portraits/men/1.jpg",
     timePosted: "2024-09-18T14:30:00Z",
-    postImages: [
-      // "/src/assets/post/16.jpg",
-      "/src/assets/post/17.jpg",
-      // "/src/assets/post/1.jpg",
-    ],
+    postImages: [happyPost],
 
     postTitle: "Celebrating My Son's Birthday!",
     postHashtags: ["#Birthday", "#Son", "#Family", "#Joy"],
@@ -267,7 +320,7 @@ export const allPosts = [
             id: 88783,
             replierName: "John Doe",
             profilePicture: "https://randomuser.me/api/portraits/men/1.jpg",
-            message: "You should! It’s worth it!",
+            message: "You should! It's worth it!",
             timePosted: "2024-09-18T15:05:00Z",
           },
         ],
@@ -303,10 +356,7 @@ export const allPosts = [
     name: "Emily Davis",
     profilePicture: "https://randomuser.me/api/portraits/women/5.jpg",
     timePosted: "2024-09-20T08:45:00Z",
-    postImages: [
-      "/src/assets/post/beach-3.jpeg",
-      "/src/assets/post/beach-2.jpeg",
-    ],
+    postImages: [beachPost3, beachPost2],
     postTitle: "A Day at the Beach",
     postHashtags: ["#BeachDay", "#Sunshine", "#Relaxation", "#Summer"],
     postDescription:
@@ -338,11 +388,7 @@ export const allPosts = [
     name: "Michael Brown",
     profilePicture: "https://randomuser.me/api/portraits/men/7.jpg",
     timePosted: "2024-09-21T16:00:00Z",
-    postImages: [
-      "/src/assets/post/nature-3.jpeg",
-      "/src/assets/post/nature-1.jpeg",
-      "/src/assets/post/nature-2.jpeg",
-    ],
+    postImages: [naturePost3, naturePost1, naturePost2],
     postTitle:
       "Exploring the Majestic Beauty of Nature and Its Scenic Landscapes",
     postHashtags: ["#Nature", "#Exploration", "#Adventure", "#Beauty"],
@@ -367,12 +413,7 @@ export const allPosts = [
     name: "Sophia Turner",
     profilePicture: "https://randomuser.me/api/portraits/women/9.jpg",
     timePosted: "2024-09-22T12:30:00Z",
-    postImages: [
-      "https://images.unsplash.com/photo-1498050108023-c524d0e8a8e0",
-      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-      "https://images.unsplash.com/photo-1514516879228-1b4c5b6c4f39",
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    ],
+    postImages: [],
     postTitle: "Artistic Expressions",
     postHashtags: ["#Art", "#Creativity", "#Inspiration", "#Design"],
     postDescription:
@@ -385,7 +426,7 @@ export const allPosts = [
         id: 23227,
         commenterName: "Emily Davis",
         profilePicture: "https://randomuser.me/api/portraits/women/5.jpg",
-        message: "Beautiful work! You’re so talented!",
+        message: "Beautiful work! You're so talented!",
         timePosted: "2024-09-22T12:45:00Z",
         repliedComment: [
           {
@@ -404,66 +445,66 @@ export const allPosts = [
 export const friendsSuggest = [
   {
     name: "Justin Mandes",
-    picture: "/src/assets/friends/men-1.jpeg",
+    picture: friendMen1,
   },
   {
     name: "Harper Thomas",
-    picture: "/src/assets/friends/lady-1.jpeg",
+    picture: friendLady1,
   },
   {
     name: "Noah Rodriguez",
-    picture: "/src/assets/friends/men-2.jpeg",
+    picture: friendMen2,
   },
   {
     name: "Benjamin Young",
-    picture: "/src/assets/friends/men-3.jpeg",
+    picture: friendMen3,
   },
   {
     name: "Amelia Anderson",
-    picture: "/src/assets/friends/lady-2.jpeg",
+    picture: friendLady2,
   },
   {
     name: "Abigail Garcia",
-    picture: "/src/assets/friends/lady-3.jpeg",
+    picture: friendLady3,
   },
   {
     name: "Liam Miller",
-    picture: "/src/assets/friends/men-4.jpeg",
+    picture: friendMen4,
   },
   {
     name: "Isabella Wilson",
-    picture: "/src/assets/friends/lady-4.jpeg",
+    picture: friendLady4,
   },
 ];
 
 export const pagesLiked = [
   {
     name: "Chrimson Agency",
-    logo: "/src/assets/page-logo/1.jpg",
+    logo: pageLogo1,
     desc: "Clothing Store",
     followers: "15",
   },
   {
     name: "Digital Pixel",
-    logo: "/src/assets/page-logo/2.jpg",
+    logo: pageLogo2,
     desc: "Software Company",
     followers: "128",
   },
   {
     name: "The Angle Bar",
-    logo: "/src/assets/page-logo/3.jpg",
+    logo: pageLogo3,
     desc: "Disco Bar",
     followers: "6",
   },
   {
     name: "The Fivestar Food",
-    logo: "/src/assets/page-logo/4.jpg",
+    logo: pageLogo4,
     desc: "Restaurant Food",
     followers: "29",
   },
   {
     name: "Royal Watch",
-    logo: "/src/assets/page-logo/5.jpg",
+    logo: pageLogo5,
     desc: "Watch Shop",
     followers: "33",
   },
@@ -473,52 +514,52 @@ export const games = [
   {
     name: "Blood Strike",
     followers: "22.7",
-    picture: "/src/assets/game/1.jpg",
+    picture: game1,
   },
   {
     name: "Aero Space",
     followers: "40.8",
-    picture: "/src/assets/game/2.jpg",
+    picture: game2,
   },
   {
     name: "Gravick",
     followers: "60",
-    picture: "/src/assets/game/3.jpg",
+    picture: game3,
   },
   {
     name: "Eden Blood",
     followers: "97.2",
-    picture: "/src/assets/game/4.jpg",
+    picture: game4,
   },
   {
     name: "Star Wars",
     followers: "200.6",
-    picture: "/src/assets/game/5.jpg",
+    picture: game5,
   },
   {
     name: "Super Mario",
     followers: "354.8",
-    picture: "/src/assets/game/6.jpg",
+    picture: game6,
   },
 ];
 
 export const galleryPhotos = [
   {
-    picture: "/src/assets/story/1.jpg",
+    picture: storyImg1,
   },
   {
-    picture: "/src/assets/story/2.jpg",
+    picture: storyImg2,
   },
   {
-    picture: "/src/assets/story/3.jpg",
+    picture: storyImg3,
   },
   {
-    picture: "/src/assets/story/4.jpg",
+    picture: storyImg4,
   },
   {
-    picture: "/src/assets/story/5.jpg",
+    picture: storyImg5,
   },
   {
-    picture: "/src/assets/story/6.jpg",
+    picture: storyImg6,
   },
 ];
