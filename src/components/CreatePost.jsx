@@ -4,6 +4,7 @@ import { BsCameraVideo } from "react-icons/bs";
 import { RxDotsHorizontal } from "react-icons/rx";
 import { colors, reactions } from "../constants";
 import { MdClose } from "react-icons/md";
+import { signEmoji } from "@/assets";
 
 const CreatePost = () => {
   const [hideComponent, setHideComponent] = useState(false);
@@ -73,11 +74,7 @@ const CreatePost = () => {
               className="flex-1 border-none bg-transparent px-3 py-3 font-roboto text-[13px] outline-none placeholder:text-black/60"
               placeholder="Write Something Here."
             />
-            <img
-              src="/src/assets/svg/emoji/sign.webp"
-              alt="sign"
-              className="w-4"
-            />
+            <img src={signEmoji} alt="sign" className="w-4" />
           </div>
         </>
       )}
