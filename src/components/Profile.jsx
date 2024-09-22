@@ -1,3 +1,4 @@
+import { storyImg8 } from "@/assets";
 import React from "react";
 
 const Profile = () => {
@@ -6,7 +7,7 @@ const Profile = () => {
       <div className="flex flex-col items-center justify-center gap-3 pt-4">
         <div className="relative rounded-full bg-gradient-to-r from-primary via-white to-white p-1">
           <img
-            src="/src/assets/story/8.jpg"
+            src={storyImg8}
             alt="avatar"
             className="object-to size-[110px] rounded-full bg-white object-cover p-1"
           />

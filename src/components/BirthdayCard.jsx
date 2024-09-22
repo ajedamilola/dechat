@@ -1,4 +1,4 @@
-import { user4 } from "@/assets";
+import { birthdayBg, user4 } from "@/assets";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa6";
 import { RiCake3Line } from "react-icons/ri";
@@ -9,7 +9,7 @@ const BirthdayCard = () => {
     <div
       className="mt-4 w-full rounded-sm p-[15px] text-white"
       style={{
-        background: `linear-gradient(99deg, rgba(216, 53, 101, 0.9), rgba(187, 53, 216, 0.8)), url(${user4})`,
+        background: `linear-gradient(99deg, rgba(216, 53, 101, 0.9), rgba(187, 53, 216, 0.8)), url(${birthdayBg})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -39,7 +39,7 @@ const BirthdayCard = () => {
         </div>
 
         <img
-          src="/src//assets/user-sm/4.jpg"
+          src={user4}
           alt="user"
           className="block size-16 rounded-full object-cover"
         />
